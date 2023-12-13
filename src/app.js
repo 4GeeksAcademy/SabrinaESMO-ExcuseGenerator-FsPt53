@@ -3,14 +3,10 @@ import "bootstrap";
 import "./style.css";
 
 window.onload = function() {
-  document.querySelector("#excuse").innerHTML = excusa();
+  document.querySelector("#excuse").innerHTML = excuse;
 };
 
-////////////
-// ARRAYS //
-////////////
-
-let quién = [
+let who = [
   "Mi profe de 4Geeks ",
   "Elon Musk ",
   "Mi perro ",
@@ -20,7 +16,7 @@ let quién = [
   "Un hámster chino "
 ];
 
-let acción = [
+let action = [
   "quemó ",
   "destruyó ",
   "hundió en el mar ",
@@ -29,7 +25,7 @@ let acción = [
   "hizo un dibujo en "
 ];
 
-let qué = [
+let what = [
   "mi proyecto final ",
   "mi móvil ",
   "el servidor más grande del mundo ",
@@ -37,7 +33,7 @@ let qué = [
   "mi Nintendo Switch "
 ];
 
-let cuándo = [
+let when = [
   "en 1470.",
   "el día de fin de curso.",
   "cuando se acercaba el Ragnarök.",
@@ -45,39 +41,8 @@ let cuándo = [
   "mientras yo le hacía galletas."
 ];
 
-////////////////////////////
-// FUNCIONES DE SELECCIÓN //
-////////////////////////////
-
-function getQuién(quién) {
-  let randomIndex = Math.floor(Math.random() * quién.length);
-  return quién[randomIndex];
+function getItem(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
 
-function getAcción(acción) {
-  let randomIndex = Math.floor(Math.random() * acción.length);
-  return acción[randomIndex];
-}
-
-function getQué(qué) {
-  let randomIndex = Math.floor(Math.random() * qué.length);
-  return qué[randomIndex];
-}
-
-function getCuándo(cuándo) {
-  let randomIndex = Math.floor(Math.random() * cuándo.length);
-  return cuándo[randomIndex];
-}
-
-///////////////////
-// FUNCIÓN FRASE //
-///////////////////
-
-function excusa() {
-  const elQuién = getQuién(quién);
-  const laAcción = getAcción(acción);
-  const elQué = getQué(qué);
-  const elCuándo = getCuándo(cuándo);
-
-  return elQuién + laAcción + elQué + elCuándo;
-}
+const excuse = getItem(who) + getItem(action) + getItem(what) + getItem(when);
